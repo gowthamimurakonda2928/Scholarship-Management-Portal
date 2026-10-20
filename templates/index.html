@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Management Portal</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎓 ScholarConnect</div>
+
+            <div class="nav-links">
+                <a href="{{ url_for('home') }}" class="active">Home</a>
+                <a href="{{ url_for('scholarships') }}">Scholarships</a>
+                <a href="{{ url_for('application') }}">Apply</a>
+                <a href="{{ url_for('documents') }}">Documents</a>
+                <a href="{{ url_for('eligibility') }}">Eligibility</a>
+                <a href="{{ url_for('profile') }}">Profile</a>
+                <a href="{{ url_for('status') }}">Status</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+
+        <section class="hero-section">
+            <div class="hero-content">
+                <p class="hero-tag">YOUR FUTURE STARTS HERE</p>
+
+                <h1>
+                    Empower Your Education
+                    <span>With Scholarships</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover scholarship opportunities, check your
+                    eligibility and manage your applications in one place.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="{{ url_for('scholarships') }}"
+                       class="primary-button">
+                        Explore Scholarships
+                    </a>
+
+                    <a href="{{ url_for('eligibility') }}"
+                       class="secondary-button">
+                        Check Eligibility
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="graduation-icon">🎓</div>
+                <h2>Invest in Your Future</h2>
+                <p>
+                    Find opportunities that support your educational journey.
+                </p>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">🎓</div>
+                <div>
+                    <h3>3+</h3>
+                    <p>Scholarship Categories</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📝</div>
+                <div>
+                    <h3>Easy</h3>
+                    <p>Application Process</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📄</div>
+                <div>
+                    <h3>Simple</h3>
+                    <p>Document Checklist</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div>
+                    <h3>Track</h3>
+                    <p>Application Status</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="section-heading">
+                <p>OUR SERVICES</p>
+                <h2>Everything You Need</h2>
+            </div>
+
+            <div class="service-grid">
+                <a href="{{ url_for('scholarships') }}"
+                   class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <div>
+                        <h3>Explore Scholarships</h3>
+                        <p>View available scholarship categories.</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+                <a href="{{ url_for('application') }}"
+                   class="service-card">
+                    <div class="service-icon">📝</div>
+                    <div>
+                        <h3>Apply Now</h3>
+                        <p>Fill in your scholarship application.</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+                <a href="{{ url_for('documents') }}"
+                   class="service-card">
+                    <div class="service-icon">📁</div>
+                    <div>
+                        <h3>Documents</h3>
+                        <p>Review your required document checklist.</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+                <a href="{{ url_for('status') }}"
+                   class="service-card">
+                    <div class="service-icon">📊</div>
+                    <div>
+                        <h3>Track Application</h3>
+                        <p>View the sample application status.</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="workflow-section">
+            <div class="section-heading">
+                <p>HOW IT WORKS</p>
+                <h2>Four Simple Steps</h2>
+            </div>
+
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h3>Explore</h3>
+                    <p>Find a suitable scholarship.</p>
+                </div>
+
+                <div class="workflow-line"></div>
+
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h3>Check</h3>
+                    <p>Review sample eligibility criteria.</p>
+                </div>
+
+                <div class="workflow-line"></div>
+
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h3>Apply</h3>
+                    <p>Enter your application details.</p>
+                </div>
+
+                <div class="workflow-line"></div>
+
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <h3>Track</h3>
+                    <p>Check your displayed status.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 ScholarConnect | Scholarship Management Portal</p>
+        <p>Supporting students on their educational journey.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

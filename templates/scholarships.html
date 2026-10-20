@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Scholarships</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎓 ScholarConnect</div>
+            <div class="nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('scholarships') }}" class="active">Scholarships</a>
+                <a href="{{ url_for('application') }}">Apply</a>
+                <a href="{{ url_for('documents') }}">Documents</a>
+                <a href="{{ url_for('eligibility') }}">Eligibility</a>
+                <a href="{{ url_for('profile') }}">Profile</a>
+                <a href="{{ url_for('status') }}">Status</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Explore Scholarships 🎓</h1>
+        <p class="welcome">
+            Discover opportunities to support your education.
+        </p>
+
+        <div class="scholarship-container">
+
+            <div class="scholarship-card">
+                <h2>🏆 Merit Scholarship</h2>
+                <p><b>Category:</b> Academic Excellence</p>
+                <p>For students who achieve the required academic performance.</p>
+                <p><b>Eligibility:</b> Depends on the scheme rules.</p>
+                <a href="{{ url_for('application') }}" class="menu-button">
+                    Apply Now →
+                </a>
+            </div>
+
+            <div class="scholarship-card">
+                <h2>💰 Financial Assistance</h2>
+                <p><b>Category:</b> Financial Support</p>
+                <p>Explore support options for students with financial needs.</p>
+                <p><b>Eligibility:</b> Depends on the scheme rules.</p>
+                <a href="{{ url_for('application') }}" class="menu-button">
+                    Apply Now →
+                </a>
+            </div>
+
+            <div class="scholarship-card">
+                <h2>🏛️ Government Scholarships</h2>
+                <p><b>Category:</b> Government Schemes</p>
+                <p>Explore applicable central and state scholarship schemes.</p>
+                <p><b>Eligibility:</b> Check the official scheme guidelines.</p>
+                <a href="{{ url_for('application') }}" class="menu-button">
+                    Apply Now →
+                </a>
+            </div>
+
+            <div class="scholarship-card">
+                <h2>🌟 Higher Education Support</h2>
+                <p><b>Category:</b> Further Studies</p>
+                <p>Explore funding opportunities for eligible higher education students.</p>
+                <p><b>Eligibility:</b> Varies by programme.</p>
+                <a href="{{ url_for('application') }}" class="menu-button">
+                    Apply Now →
+                </a>
+            </div>
+
+        </div>
+
+        <br><br>
+        <a href="{{ url_for('home') }}" class="back-button">
+            ← Back to Home
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 ScholarConnect | Scholarship Management Portal</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

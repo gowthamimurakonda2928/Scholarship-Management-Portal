@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility Checker | ScholarConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a class="logo" href="{{ url_for('home') }}">🎓 ScholarConnect</a>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('scholarships') }}">Scholarships</a>
+            <a href="{{ url_for('application') }}">Apply</a>
+            <a href="{{ url_for('documents') }}">Documents</a>
+            <a class="active" href="{{ url_for('eligibility') }}">Eligibility</a>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            <a href="{{ url_for('status') }}">Status</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <h1>Eligibility Checker 🔎</h1>
+    <p>Enter your academic marks and annual family income.</p>
+
+    <form class="form-box"
+          action="{{ url_for('eligibility') }}"
+          method="POST">
+
+        <label for="marks">Academic Marks (%)</label>
+        <input type="number"
+               id="marks"
+               name="marks"
+               min="0"
+               max="100"
+               step="0.01"
+               placeholder="Enter marks from 0 to 100"
+               required>
+
+        <label for="familyIncome">Annual Family Income (₹)</label>
+        <input type="number"
+               id="familyIncome"
+               name="familyIncome"
+               min="0"
+               step="0.01"
+               placeholder="Enter annual family income"
+               required>
+
+        <button type="submit" class="upload-button">
+            Check Eligibility
+        </button>
+    </form>
+
+    {% if result %}
+        <div class="status-box">
+            <h3>Eligibility Result</h3>
+            <p>{{ result }}</p>
+        </div>
+    {% endif %}
+
+    <p>
+        <strong>Note:</strong> This demonstration uses sample criteria
+        of 60% marks and ₹2,50,000 annual family income.
+        Actual eligibility depends on the official scheme rules.
+    </p>
+
+    <p><a href="{{ url_for('home') }}">← Back to Home</a></p>
+</main>
+
+<footer class="footer">
+    <p>© 2026 ScholarConnect | Scholarship Management Portal</p>
+</footer>
+
+</body>
+</html>

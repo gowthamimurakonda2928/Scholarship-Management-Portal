@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Status | ScholarConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a class="logo" href="{{ url_for('home') }}">🎓 ScholarConnect</a>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('scholarships') }}">Scholarships</a>
+            <a href="{{ url_for('application') }}">Apply</a>
+            <a href="{{ url_for('documents') }}">Documents</a>
+            <a href="{{ url_for('eligibility') }}">Eligibility</a>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            <a class="active" href="{{ url_for('status') }}">Status</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <h1>Application Status 📋</h1>
+    <p>Check the scholarship applications saved in the portal.</p>
+
+    {% if applications %}
+        {% for application in applications %}
+            <section class="status-box">
+                <h2>{{ application['scholarship'] }}</h2>
+
+                <p>
+                    <strong>Application ID:</strong>
+                    {{ application['id'] }}
+                </p>
+
+                <p>
+                    <strong>Student Name:</strong>
+                    {{ application['student_name'] or 'Not available' }}
+                </p>
+
+                <p>
+                    <strong>Student ID:</strong>
+                    {{ application['student_id'] }}
+                </p>
+
+                <p>
+                    <strong>Academic Percentage:</strong>
+                    {{ application['academic_score'] }}%
+                </p>
+
+                <p>
+                    <strong>Annual Family Income:</strong>
+                    ₹{{ application['income'] }}
+                </p>
+
+                <p>
+                    <strong>Category:</strong>
+                    {{ application['category'] }}
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    <span>{{ application['status'] }}</span>
+                </p>
+            </section>
+        {% endfor %}
+    {% else %}
+        <section class="status-box">
+            <h2>No Applications Yet</h2>
+            <p>You have not submitted any scholarship applications.</p>
+            <a href="{{ url_for('application') }}">Apply for a Scholarship →</a>
+        </section>
+    {% endif %}
+
+    <p><a href="{{ url_for('home') }}">← Back to Home</a></p>
+</main>
+
+<footer class="footer">
+    <p>© 2026 ScholarConnect | Scholarship Management Portal</p>
+</footer>
+
+</body>
+</html>

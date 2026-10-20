@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎓 ScholarConnect</div>
+            <div class="nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('scholarships') }}">Scholarships</a>
+                <a href="{{ url_for('application') }}">Apply</a>
+                <a href="{{ url_for('documents') }}">Documents</a>
+                <a href="{{ url_for('eligibility') }}">Eligibility</a>
+                <a href="{{ url_for('profile') }}">Profile</a>
+                <a href="{{ url_for('status') }}">Status</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Student Details 👩‍🎓</h1>
+        <p class="welcome">
+            View the complete sample student and application information.
+        </p>
+
+        <section class="status-box">
+            <h2>Personal Information</h2>
+            <p><strong>Student ID:</strong> {{ student_id }}</p>
+            <p><strong>Full Name:</strong> {{ student_name }}</p>
+            <p><strong>Email:</strong> {{ student_email }}</p>
+            <p><strong>College:</strong> {{ college }}</p>
+            <p><strong>Course:</strong> {{ course }}</p>
+            <p><strong>Study Year:</strong> {{ study_year }}</p>
+
+            <h2 style="margin-top: 25px;">Scholarship Information</h2>
+            <p><strong>Scholarship:</strong> {{ scholarship_name }}</p>
+            <p><strong>Application Status:</strong> {{ application_status }}</p>
+        </section>
+
+        <br><br>
+        <a href="{{ url_for('profile') }}" class="primary-button">
+            View My Profile
+        </a>
+
+        <br><br>
+        <a href="{{ url_for('home') }}" class="back-button">
+            ← Back to Home
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 ScholarConnect | Scholarship Management Portal</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | ScholarConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a class="logo" href="{{ url_for('home') }}">🎓 ScholarConnect</a>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('scholarships') }}">Scholarships</a>
+            <a href="{{ url_for('application') }}">Apply</a>
+            <a href="{{ url_for('documents') }}">Documents</a>
+            <a href="{{ url_for('eligibility') }}">Eligibility</a>
+            <a class="active" href="{{ url_for('profile') }}">Profile</a>
+            <a href="{{ url_for('status') }}">Status</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <h1>Student Registration 👤</h1>
+    <p>Register your details before applying for a scholarship.</p>
+
+    <form class="form-box" action="{{ url_for('profile') }}" method="POST">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="student_id">Create Student ID</label>
+        <input type="text" id="student_id" name="student_id"
+               placeholder="Example: STU001" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="course">Course</label>
+        <select id="course" name="course" required>
+            <option value="">Select your course</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="B.Com">B.Com</option>
+            <option value="B.A">B.A</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="college">College Name</label>
+        <input type="text" id="college" name="college" required>
+
+        <label for="percentage">Academic Percentage (%)</label>
+        <input type="number" id="percentage" name="percentage"
+               min="0" max="100" step="0.01" required>
+
+        <button type="submit" class="upload-button">
+            Register Student →
+        </button>
+    </form>
+
+    <p><a href="{{ url_for('home') }}">← Back to Home</a></p>
+</main>
+
+<footer class="footer">
+    <p>© 2026 ScholarConnect | Scholarship Management Portal</p>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
